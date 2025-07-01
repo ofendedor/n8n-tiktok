@@ -8,8 +8,7 @@ COPY .n8n /home/node/.n8n
 # Cambia a la carpeta del nodo TikTok
 WORKDIR /home/node/.n8n/custom/n8n-nodes-tiktok
 
-# Instala pnpm globalmente
-RUN npm install -g pnpm
+# Ya no hace falta instalar pnpm, está en la imagen base
 
 # Instala dependencias y compila el nodo TikTok
 RUN pnpm install
@@ -20,5 +19,4 @@ RUN chown -R node:node /home/node/.n8n
 
 USER node
 
-# Cambia el directorio de trabajo de vuelta a /home/node/.n8n (opcional)
 WORKDIR /home/node/.n8n
