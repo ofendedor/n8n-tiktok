@@ -7,7 +7,7 @@ services:
     plan: free
     runtime: docker
     name: n8n-service
-    repo: https://github.com/TU_USUARIO/TU_REPO  # Reemplaza esto si usas deploy automático
+    repo: https://github.com/ofendedor/n8n-tiktok.git  # Reemplaza esto si usas deploy automático
     dockerfilePath: ./Dockerfile
     envVars:
       - key: N8N_ENCRYPTION_KEY
