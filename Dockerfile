@@ -2,21 +2,10 @@ FROM n8nio/n8n
 
 USER root
 
-# Copia toda la carpeta .n8n incluyendo custom con el nodo TikTok
+# Copia los nodos personalizados al contenedor
 COPY .n8n /home/node/.n8n
 
-# Cambia a la carpeta del nodo TikTok
-WORKDIR /home/node/.n8n/custom/n8n-nodes-tiktok
-
-# Ya no hace falta instalar pnpm, está en la imagen base
-
-# Instala dependencias y compila el nodo TikTok
-RUN pnpm install
-RUN pnpm build
-
-# Da permisos a todo .n8n para el usuario node
+# Ajusta los permisos de los archivos
 RUN chown -R node:node /home/node/.n8n
 
 USER node
-
-WORKDIR /home/node/.n8n
