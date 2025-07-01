@@ -1,18 +1,17 @@
-# Use this Blueprint to deploy n8n on Render using a Dockerfile
-# and a Postgres database to store workflow data.
+# Use this Blueprint to deploy n8n on Render as a web
+# service that uses a Postgres database to store
+# workflow data.
 
 services:
   - type: web
     plan: free
-    # Cambiado de "runtime: image" a "runtime: docker"
     runtime: docker
     name: n8n-service
-
+    repo: https://github.com/TU_USUARIO/TU_REPO  # Reemplaza esto si usas deploy automático
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
-
-      # Variables necesarias para conectar a la base de datos
       - key: DB_TYPE
         value: postgresdb
       - key: DB_POSTGRESDB_DATABASE
@@ -31,12 +30,8 @@ services:
         fromDatabase:
           name: n8n-db
           property: user
-
-      # Extensiones personalizadas (como el nodo TikTok)
       - key: N8N_CUSTOM_EXTENSIONS
         value: /home/node/.n8n/custom
-
-      # Autenticación básica
       - key: N8N_BASIC_AUTH_USER
         value: admin
       - key: N8N_BASIC_AUTH_PASSWORD
