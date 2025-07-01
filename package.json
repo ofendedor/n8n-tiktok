@@ -1,0 +1,23 @@
+{
+  "name": "n8n-tiktok",
+  "version": "1.0.0",
+  "description": "> [!IMPORTANT]\r > **View full deployment instructions in the [**Render docs**](https://render.com/docs/deploy-n8n).**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ofendedor/n8n-tiktok.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ofendedor/n8n-tiktok/issues"
+  },
+  "homepage": "https://github.com/ofendedor/n8n-tiktok#readme",
+  "dependencies": {
+    "@igabm/n8n-nodes-tiktok": "^0.1.6"
+  }
+}
